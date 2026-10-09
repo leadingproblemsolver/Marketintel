@@ -1,7 +1,7 @@
 # Whop listing: $149 Custom Workflow Reliability Audit
 
 Copy each block into the matching Whop field (labels vary by Whop's form; match by meaning).
-Items marked **[OWNER]** are decisions only you can make. Do not publish until each is filled in with something you can actually deliver. Nothing here is a result, testimonial or guarantee.
+Items marked **[OWNER]** are decisions only you can make. Do not publish until each is filled in with something you can actually deliver. Nothing here states a result, a customer quote or a guarantee.
 
 ## Product type
 One-time payment, service (not a digital download). Price: **$149 USD**. No trial, no discount, no countdown.
