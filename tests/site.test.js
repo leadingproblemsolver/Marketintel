@@ -74,3 +74,9 @@ test("app.js fires lead_submit only after a successful response", () => {
 test("css cannot override the hidden attribute (payment buttons stay invisible)", () => {
   assert.match(read("style.css"), /\[hidden\]\s*\{\s*display:\s*none\s*!important/);
 });
+
+test("whop listing keeps owner-decision placeholders and invents no results", () => {
+  const d = fs.readFileSync(path.join(__dirname, "..", "docs", "whop-listing.md"), "utf8");
+  assert.match(d, /\*\*\[OWNER/); assert.match(d, /\$149/);
+  assert.doesNotMatch(d, /testimonial|money[- ]back guarantee|limited (time|spots)/i);
+});

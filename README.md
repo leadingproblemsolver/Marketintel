@@ -26,5 +26,8 @@ Import the repo in Netlify; `netlify.toml` sets `site/` as the publish dir. Netl
 ## Analytics
 `page_view`, `CTA_click`, `lead_submit` (after confirmed receipt, no PII), `checkout_start` are wired. `purchase` is defined in `analytics.js` but intentionally never fired client-side: it must be sent from a verified payment confirmation once a merchant is connected.
 
+## Whop
+Draft listing and go-live steps: `docs/whop-listing.md`. Paste the Whop checkout URL into `auditCheckoutUrl` only after the listing's owner-decision fields are filled.
+
 ## Before enabling payment
 Audit: confirm delivery scope, timeframe, refund terms; update `terms.html`; then set a checkout URL. Kit: complete the Gate 1 checklist (`prototype/n8n_reliability_gate1/PRODUCTION_CHECKLIST.md`) and publish its terms first.
