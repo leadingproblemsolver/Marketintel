@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zynro LLC: n8n workflows that fail silently</title>
+<meta name="description" content="Zynro LLC reviews n8n workflows for silent-failure risks: green executions with wrong or missing business outcomes. Paid reliability audit inquiries open; reliability kit waitlist.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="#top">Zynro LLC</a>
+<nav aria-label="Primary"><a href="#failures">Failure modes</a><a href="#offers">Offers</a><a href="#contact">Contact</a></nav></div></header>
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<h1>Your n8n workflow can say “success” while the business outcome never happened.</h1>
+<p class="lead">A green execution is not proof that the invoice was sent, the lead was routed, or the sync ran. When automations fail silently, you find out from a customer, a missing payment or a stale report. Zynro LLC reviews submitted workflows for plausible silent-failure risks and tells you what to fix first.</p>
+<div class="btns">
+<a class="btn" href="#contact" data-cta="hero_audit_inquiry" data-offer="audit">Request a $149 workflow audit</a>
+<a class="btn alt" href="#kit" data-cta="hero_kit_waitlist" data-offer="kit">Join the reliability kit waitlist</a>
+</div>
+<p class="fine">For n8n freelancers, automation agencies and operators who run business-critical workflows.</p>
+</div>
+
+<section id="failures">
+<h2>Six ways n8n workflows fail without telling you</h2>
+<p class="sub">These are the failure categories the audit looks for. Each one can leave executions looking healthy while the business result is wrong or missing.</p>
+<div class="grid two">
+<div class="card"><div class="num">01</div><h3>Continue-on-fail hides a real error</h3><p>A node errors, but “continue on fail” lets the run finish green. Downstream steps may act on missing or partial data, and nothing records an incident.</p></div>
+<div class="card"><div class="num">02</div><h3>Zero items treated as success</h3><p>A source returns an empty list, or “always output data” turns no rows into one item. The run completes, but nothing was processed and nobody is alerted.</p></div>
+<div class="card"><div class="num">03</div><h3>Alerting that is itself switched off</h3><p>The error workflow is unlinked, inactive or misconfigured, so the failure notification never goes out. You assume silence means health.</p></div>
+<div class="card"><div class="num">04</div><h3>Side effect before the state is saved</h3><p>A message, charge or record is created, then persisting state fails. A retry repeats the side effect, such as a duplicate email or payment, unless an idempotency key prevents it.</p></div>
+<div class="card"><div class="num">05</div><h3>Schedules that quietly stop</h3><p>A workflow is deactivated or its trigger stalls. There is no failed execution to alert on because nothing ran. Only an independent heartbeat notices a missed run.</p></div>
+<div class="card"><div class="num">06</div><h3>Error output wired to nothing</h3><p>A node’s error branch exists but ends in a no-op. The failure is “handled” on the canvas and discarded in practice, with no structured failure record.</p></div>
+</div>
+</section>
+
+<section id="offers">
+<h2>Two offers, clearly separated</h2>
+<p class="sub">One is a service you can enquire about now. The other is not available yet.</p>
+<div class="grid two">
+<article class="card offer" id="audit">
+<span class="tag">Inquiries open</span>
+<h3>Custom Workflow Reliability Audit</h3>
+<div class="price">$149</div>
+<p>A review of one workflow you submit, focused on silent-failure risks.</p>
+<h4>What you receive</h4>
+<ul><li>A written risk report for the submitted workflow</li><li>Prioritized remediation recommendations</li></ul>
+<h4>Limits</h4>
+<ul><li>Covers plausible silent-failure risks. It does not claim to find or prevent every failure.</li><li>It is a review of what you submit, not monitoring and not a guarantee of future reliability.</li><li>Recommendations are advice; implementing them is not included unless agreed in writing.</li></ul>
+<div class="notice" data-pay-pending="audit"><strong>Payment is not open yet.</strong> We confirm scope, timeframe and terms with you first. You are not charged by sending an inquiry.</div>
+<div class="btns">
+<a class="btn" href="#contact" data-cta="audit_inquiry" data-offer="audit">Send an audit inquiry</a>
+<a class="btn alt" href="#" data-booking data-cta="audit_book_call" data-offer="audit">Book a 30-minute call</a>
+<a class="btn" href="#" data-checkout="audit" data-cta="audit_checkout" data-offer="audit" hidden>Pay $149</a>
+</div>
+</article>
+<article class="card offer" id="kit">
+<span class="tag">Coming soon</span>
+<h3>n8n Reliability Kit</h3>
+<div class="price">$17</div>
+<p>Workflow templates and documentation for the six failure categories above.</p>
+<div class="notice"><strong>Not for sale yet.</strong> We will not release or charge for it until clean-instance import, six live failure tests and documentation verification are complete. Joining the waitlist is free and takes no payment.</div>
+<h4>Limits</h4>
+<ul><li>Contents and results are not published until they have been tested.</li><li>No claim is made that it prevents all silent failures.</li></ul>
+<div class="btns"><a class="btn alt" href="#contact" data-cta="kit_waitlist" data-offer="kit">Join the waitlist</a>
+<a class="btn" href="#" data-checkout="kit" data-cta="kit_checkout" data-offer="kit" hidden>Buy for $17</a></div>
+</article>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="grid two">
+<div>
+<h3>Audit inquiry</h3>
+<p class="sub">Tell us about the workflow and what it must reliably do. Please do not send credentials or customer data.</p>
+<form name="audit-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-lead="audit" novalidate>
+<input type="hidden" name="form-name" value="audit-inquiry">
+<p class="hp"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label>Name<input name="name" type="text" required autocomplete="name"></label>
+<label>Work email<input name="email" type="email" required autocomplete="email"></label>
+<label>Audit inquiry<textarea name="inquiry" required minlength="10" placeholder="What does the workflow do, and what would a silent failure cost you?"></textarea></label>
+<button class="btn" type="submit" data-cta="audit_form_submit_click" data-offer="audit">Send inquiry</button>
+<p class="form-status" role="status" aria-live="polite"></p>
+<p class="fine">We use your details only to reply to this inquiry. See the <a href="privacy.html">privacy notice</a>.</p>
+</form>
+</div>
+<div>
+<h3>Reliability kit waitlist</h3>
+<p class="sub">Get one email when the kit is verified and available. Nothing before that.</p>
+<form name="kit-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-lead="kit" novalidate>
+<input type="hidden" name="form-name" value="kit-waitlist">
+<p class="hp"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label>Name<input name="name" type="text" required autocomplete="name"></label>
+<label>Work email<input name="email" type="email" required autocomplete="email"></label>
+<input type="hidden" name="inquiry" value="Kit waitlist">
+<button class="btn alt" type="submit" data-cta="kit_form_submit_click" data-offer="kit">Join waitlist</button>
+<p class="form-status" role="status" aria-live="polite"></p>
+</form>
+<p class="fine" style="margin-top:20px">Prefer to talk first? <a href="#" data-booking data-cta="contact_book_call" data-offer="audit">Book a 30-minute call</a>.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><a href="privacy.html">Privacy</a><a href="terms.html">Terms, refunds &amp; delivery</a><a href="terms.html#support">Support</a><p>© Zynro LLC. Offers are subject to the terms linked above.</p></div></footer>
+<script src="site.config.js"></script><script src="analytics.js"></script><script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Production readiness (all checkboxes must be verified live)
+- [ ] Rights/ownership for every distributable asset verified.
+- [ ] Workflow files import into a clean target n8n instance.
+- [ ] Imported workflow credential mapping documented; no secrets exported.
+- [ ] Each of the 6 failure tests has a reproducible observed result and execution receipt.
+- [ ] Error Trigger is configured, and separately tested via an automatic (not manual) failure.
+- [ ] Business outcome assertion catches green-but-wrong executions.
+- [ ] Scheduled workflow has independent heartbeat and expected-run alerts.
+- [ ] Workflow activation/publishing and alerting configuration verified.
+- [ ] Recoverability, retries, idempotency, and side-effect ordering tested.
+- [ ] Customer installation and troubleshooting instructions run by a fresh tester.
+- [ ] Free-template baseline tested against same six inputs; comparative evidence archived.
+- [ ] Remove test credentials, secrets, and personal records from exports.
+- [ ] Exported JSON and all README links validated.
+- [ ] Final five-deliverable commercial bundle completed.
